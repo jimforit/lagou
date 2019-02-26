@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://m.lagou.com/minvite/invitation.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>拉勾网</title>
+    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招"
+          name="keywords">
+    <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link href="/static/css/intro.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+
+<header id="header"></header>
+
+<div id="content">
+    <!--plus描述-->
+    <div id="invited_closed" class="plus">
+        <div class="bulb"></div>
+        <div class="plusbtn">
+            <span>已关闭</span>
+            <div id="open_invited" onclick="show_invited()" class="btn">
+                <em class="circle"></em>
+                <i class="close"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--plus功能描述-->
+    <div class="explain" id="explain_closed">
+        <div class="txt">
+        <h1>功能说明:</h1>
+        </div>
+         <div class="txt">
+             <p>1.开启邀约功能,将自己匿名展示给职位发布者</p>
+             <p class="indent">可以收到来自企业的主动邀请;</p>
+         </div>
+        <div class="txt">
+            <p>2.本功能暂时只对部分拉勾认证企业开放，</p>
+            <p class="indent">不必担心被海量邀请骚扰。</p>
+        </div>
+        <div class="txt">
+            <p>3.不想被某些企业搜到？</p>
+            <p class="indent">你可以自由设置想屏蔽的企业。</p>
+        </div>
+        <div class="txt">
+            <p>4.投递简历后，企业会根据你的完整简历</p>
+            <p class="indent">来决定是否邀请你参加面试。</p>
+        </div>
+    </div>
+    <div class="plus" id="invited_open" style="display: none;">
+        <div class="plusbtn">
+            <span>已开启</span>
+            <div id="close_invited" onclick="show_closed()" class="btn" >
+                <em class="circle"></em>
+                <i class="close"></i>
+            </div>
+        </div>
+        <div class="plusbtn"><a href="#" class="shield">设置要屏蔽的企业 &gt;</a></div>
+    </div>
+    <div class="explain" id="explain_open" style="display: none">
+        <div class="txt">
+            <p>暂时还没有收到邀约，你可以一边主动投简历，一边等待企业的邀约</p>
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+<!-- dep -->
+<script>
+    function show_invited() {
+        document.getElementById("invited_open").style.display="block";
+        document.getElementById("explain_open").style.display="block";
+        document.getElementById("invited_closed").style.display="none";
+        document.getElementById("explain_closed").style.display="none";
+        document.getElementById("invited_open").className="plus open";
+    }
+    function  show_closed() {
+        document.getElementById("invited_open").style.display="none";
+        document.getElementById("explain_open").style.display="none";
+        document.getElementById("invited_closed").style.display="block";
+        document.getElementById("explain_closed").style.display="block";
+        document.getElementById("invited_open").className="plus";
+    }
+
+</script>
+</body>
+</html>

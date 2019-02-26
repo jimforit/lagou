@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+        <title>拉勾网</title>
+        <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
+        <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/mine.css" rel="stylesheet">
+    <link href="/static/css/intro.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+
+    <header id="header">拉勾网</header>
+
+    <div id="content">
+        
+        <div class="logininfo">
+                            <div class="haslogin center">
+                                        <a class="button" href="{% url "resume_page" %}" target="_self"> 简历&gt; </a>
+                                        <div class="headcon">
+                        <img class="headpic" src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg">
+                    </div>
+                    <div class="name">
+                        {% if user.nick_name %}
+                            {{ user.nick_name }}
+                            {% elif request.session.nickname %}
+                            {{ request.session.nickname }}
+                            {% else %}
+                            拉勾用户
+                        {% endif %}
+
+                    </div>
+                </div>
+                    </div>
+        <!-- 登录地址-->
+        
+        {% if user.role_id == 1 or request.session.role_id == 1 %}
+        <div class="buttons">
+
+            <a class="button deliver" href="{% url "delivery_page" %}">
+                <span>投递</span>
+
+
+            </a>
+            <a class="button interview" href="{% url "myinterview_page" %}">面试</a>
+
+            <a class="button invitation" href="{% url "invitation_page" %}">
+                <span>邀约</span>
+                            </a>
+
+            <a class="button collect" href="{% url "collections_page" %}">收藏</a>
+        </div>
+            {% else %}
+             <div class="buttons">
+
+            <a class="button deliver" href="{% url "delivery_recruiter_page" %}">
+                <span>候选人简历</span>
+
+
+            </a>
+            <a class="button interview" href="{% url "interview_record_page" %}">面试记录</a>
+
+            <a class="button invitation" href="{% url "comment_page" %}">
+                <span>评价管理</span>
+                            </a>
+
+            <a class="button collect" href="{% url "resume_collection_page" %}">候选人收藏</a>
+            <a class="button invitation" href="{% url "recruiter_page" %}">
+                <span>招聘管理</span>
+                            </a>
+
+            <a class="button collect" href="{% url "resume_list_page" %}">简历浏览</a>
+        </div>
+        {% endif %}
+
+        <div class="buttons">
+                    <a class="logout" href="{% url "logout_page" %}" style="display: block;">退出登录</a>
+        </div>
+
+{% include "footer.html" %}
+</body></html>

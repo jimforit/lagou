@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>拉勾网</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <script charset="UTF-8"></script>
+</head>
+<body ontouchstart>
+<div class="container cleafix">
+    <section class="form_container active" data-view="codeLogin">
+        <header class="form_header"><h2>请填写简历</h2></header>
+        {{ message }}
+        <form class="form_body form_register" method="post" action="{% url "resume_page" %}">
+            <div class="input_label phone_wrapper">
+                <!--
+	@require "mobile/modules/country-code/main.js"
+	@require "mobile/modules/country-code/main.less"
+-->
+                <input type="text" name="name" placeholder="请输入姓名" class="input_text_resume">
+                <input type="text" name="age" placeholder="请输入年龄" class="input_text_resume">
+                <input type="text" name="creer_time" placeholder="请输入工作年限" class="input_text_resume">
+                <input type="text" name="self_desc" placeholder="请输入自我描述" class="input_text_resume">
+                <input type="text" name="mobile" placeholder="请输入11位手机号码" class="input_text_resume">
+                <input type="text" name="email" placeholder="请输入邮箱地址" class="input_text_resume">
+                <input type="text" name="school" placeholder="请输入毕业院校" class="input_text_resume">
+                <input type="text" name="major" placeholder="请输入所学专业" class="input_text_resume">
+                <input type="text" name="lastest_job_desc" placeholder="请输入最近一份工作详情" class="input_text_resume">
+                <input type="text" name="lastest_job_position" placeholder="请输入最近一份工作职称" class="input_text_resume">
+                <input type="text" name="desire_position" placeholder="期望岗位" class="input_text_resume">
+                <input type="text" name="desire_monthly_salary" placeholder="期望月薪" class="input_text_resume">
+                <select class="input_text_resume" name="gender">
+                    <option value="female">男</option>
+                    <option value="male">女</option>
+                </select>
+                 <select class="input_text_resume" name="desire_city">
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
+                </select>
+                <input type="text" name="speciality" placeholder="请输入您的特长，多项请以/分隔" class="input_text_resume">
+                <span >请上传近照或者头像:</span><input type="file" name="self_image"  class="input_image">
+            </div>
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="提交">
+            </div>
+        </form>
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>

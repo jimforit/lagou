@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html data-dpr="3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,user-scalable=no">
+    <title>拉勾网</title>
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <script charset="UTF-8"></script>
+</head>
+<body>
+<input type="hidden" value="" id="isVisiableRequestFormVerifyCode">
+<div class="container">
+    <section class="form_container" id="phone_login">
+        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "register_page" %}" class="brother_link">注册</a>
+        </header>
+        <form class="form_body form_code" method="get">
+            <div class="input_label phone_wrapper">
+
+                <span class="area_code" id="area_code" onclick="hm()">0086</span>
+                <div class="area_code_list" id="cr_code">
+                    <dl class="code_list_main">
+                        <dt>常用</dt>
+                        <dd data-code="0086" onclick="pickup(this)">中国</dd>
+                        <dd data-code="00852" onclick="pickup(this)">中国香港</dd>
+                        <dd data-code="00886" onclick="pickup(this)">中国台湾</dd>
+                        <dd data-code="00853" onclick="pickup(this)">中国澳门</dd>
+                        <dd data-code="001" onclick="pickup(this)">美国</dd>
+                        <dt>A</dt>
+                        <dd data-code="0061" onclick="pickup(this)">澳大利亚</dd>
+                        <dd data-code="00853" onclick="pickup(this)">中国澳门</dd>
+                        <dt>B</dt>
+                        <dd data-code="0055" onclick="pickup(this)">巴西</dd>
+                        <dt>D</dt>
+                        <dd data-code="0049" onclick="pickup(this)">德国</dd>
+                        <dt>E</dt>
+                        <dd data-code="007" onclick="pickup(this)">俄罗斯</dd>
+                        <dt>F</dt>
+                        <dd data-code="0033" onclick="pickup(this)">法国</dd>
+                        <dt>H</dt>
+                        <dd data-code="0082" onclick="pickup(this)">韩国</dd>
+                        <dt>J</dt>
+                        <dd data-code="001" onclick="pickup(this)">加拿大</dd>
+                        <dt>M</dt>
+                        <dd data-code="0060" onclick="pickup(this)">马来西亚</dd>
+                        <dd data-code="001" onclick="pickup(this)">美国</dd>
+                        <dt>R</dt>
+                        <dd data-code="0081" onclick="pickup(this)">日本</dd>
+                        <dt>T</dt>
+                        <dd data-code="00886" onclick="pickup(this)">中国台湾</dd>
+                        <dd data-code="0066" onclick="pickup(this)">泰国</dd>
+                        <dt>X</dt>
+                        <dd data-code="00852" onclick="pickup(this)">中国香港</dd>
+                        <dd data-code="0065" onclick="pickup(this)">新加坡</dd>
+                        <dt>Y</dt>
+                        <dd data-code="0091" onclick="pickup(this)">印度</dd>
+                        <dd data-code="0044" onclick="pickup(this)">英国</dd>
+                        <dt>Z</dt>
+                        <dd data-code="0086" onclick="pickup(this)">中国</dd>
+                    </dl>
+                    <p class="tips">如果没有找到你所在的归属地，<br>请拨打客服电话<a href="tel:4006282835">4006282835</a> 解决。</p>
+                </div>
+
+                <input type="text" placeholder="请输入常用手机号" class="input_text phone_input">
+            </div>
+            <div class="input_label" style="display: none;">
+                <input type="text" placeholder="请证明你不是机器人" class="input_text pcode_input">
+                <img src="/static/js/create" class="pcode_img" width="2" height="2" alt="图片验证码">
+                <a class="pcode_link">换一张</a>
+            </div>
+            <div class="input_label">
+                <input type="text" class="input_text vcode_input" placeholder="请输入收到的验证码">
+                <input type="button" class="input_text vcode_link" value="获取验证码" placeholder="获取验证码">
+            </div>
+
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="登录">
+            </div>
+        </form>
+        <footer class="form_footer">
+            <span class="signin_type_btn" onclick="passwd_login()">密码登录</span>
+        </footer>
+    </section>
+    <section class="form_container active" id="passwd_login">
+        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "register_page" %}" class="brother_link">注册</a>
+        </header>
+        <form class="form_body form_password" method="post" action="{% url "login_page" %}">
+            <div class="input_label">
+                <input type="text" name="email" placeholder="请输入已验证的邮箱" class="input_text user_input">
+            </div>
+            <div class="input_label">
+                <input type="password"  name="password" class="input_text password_input" placeholder="请输入密码">
+            </div>
+            <div class="input_label btn_group">
+                {% if message == "注册成功，请登录" %}
+            <input type="button" class="submit_btn" value="{{ message }}{{ login_form.password.errors }}">
+                {% elif message %}
+            <input type="button" class="error_btn" value="{{ message }}{{ login_form.password.errors }}">
+                {% endif %}
+                {% if login_form.email.errors %}
+            <input type="button" class="error_btn" value="{{ login_form.email.errors }}">
+                {% endif %}
+                {% if login_form.password.errors %}
+            <input type="button" class="error_btn" value="{{ login_form.password.errors }}">
+                {% endif %}
+            </div>
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="登录">
+            </div>
+        </form>
+        <footer class="form_footer">
+            <span class="signin_type_btn" onclick="phone_login()">手机号登录</span>
+        </footer>
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou"><!--拉勾UI框架 -->
+<script type="text/javascript" src="/static/js/jquery.min.js" async=""></script>
+<script>
+    function phone_login() {
+        var phone_obj = document.getElementById("phone_login");
+        var passwd_obj = document.getElementById("passwd_login");
+        phone_obj.className = "form_container active";
+        passwd_obj.className = "form_container";
+    }
+    function passwd_login() {
+        var phone_obj = document.getElementById("phone_login");
+        var passwd_obj = document.getElementById("passwd_login");
+        phone_obj.className = "form_container";
+        passwd_obj.className = "form_container active";
+    }
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>

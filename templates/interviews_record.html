@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>拉勾网</title>
+    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招"
+          name="keywords">
+    <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link href="/static/css/interview.css" rel="stylesheet">
+    <link href="/static/css/collectlist.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+
+<header id="header">面试记录
+    <div class="left"><span class="corner"></span></div>
+</header>
+
+<div id="content">
+    <div class="tab">
+        <a href="#" id="btn_inted" class="tab-item selected" onclick="showInterviewed()">已面试</a><a href="#" id="btn_will_inter" class="tab-item" onclick="showWillInterview()">将面试</a>
+    </div>
+    <ul class="list " id="interviewed" style="display: block">
+            <a href="{% url "interview_result_page" %}"><li class="activeable item" data-index="0">
+                <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户8854</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            结果：通过
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+            </li></a>
+    </ul>
+     <ul class="list " id="will_interview" style="display: none">
+            <li class="activeable item" data-index="2">
+                    <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户8832</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+            </li>
+        </ul>
+    <ul class="list" id="empty" style="display: none">
+        <li class="list-empty">
+            暂时没有将面试的记录，去<a href="{% url "job_list_page" %}">投简历</a>吧
+        </li>
+    </ul>
+
+</div>
+<!-- dep -->
+
+<!---数据为空-->
+<script id="tpl-list-empty" type="text/html">
+
+    <li class="list-empty">
+        暂时没有将面试的记录，去<a href={% url "job_list_page" %}>投简历</a>吧
+    </li>
+</script>
+
+
+<div id="dialog-base-container-6" class="dialog-base-container" style="display: none;">
+    <div class="dialog-masker"></div>
+    <div class="dialog-wrapper" style="width:84.375%;">
+        <div class="dialog-content"><span class="dialog-close-new"></span>
+            <div class="dialog-confirm">是否确认已收到offer？</div>
+            <div class="dialog-buttons">
+                <div class="dialog-innerbtns"><span class="dialog-btn dialog-btn-green"
+                                                    dialog-btn-inx="0">确认已收到</span><span
+                        class="dialog-btn dialog-btn-last" dialog-btn-inx="1">目前未收到</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function showInterviewed() {
+        document.getElementById("interviewed").style.display="block";
+        document.getElementById("will_interview").style.display="none";
+        document.getElementById("empty").style.display="none";
+        document.getElementById("btn_inted").className="tab-item selected";
+        document.getElementById("btn_will_inter").className="tab-item";
+    }
+    function showWillInterview() {
+        document.getElementById("interviewed").style.display="none";
+        document.getElementById("will_interview").style.display="block";
+        document.getElementById("empty").style.display="none";
+        document.getElementById("btn_inted").className="tab-item";
+        document.getElementById("btn_will_inter").className="tab-item selected";
+    }
+</script>
+</body>
+{% include "footer.html" %}
+</html>

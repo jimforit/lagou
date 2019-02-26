@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>拉勾网</title>
+    <!-- 动态token，防御伪造请求，重复提交 -->
+    <!-- 全局变量 -->
+    <!-- 移动端适配方案 -->
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <script charset="UTF-8"></script>
+</head>
+<body>
+<div class="container cleafix">
+    <section class="form_container active" data-view="codeLogin">
+        <header class="form_header"><h2>注册拉勾</h2><a href="{% url "login_page" %}"
+                                                    class="brother_link">登录</a></header>
+        <form class="form_body form_register" method="post" action="{% url "register_page" %}">
+
+            <div class="input_label">
+              <input type="text" placeholder="请输入电子邮箱" name="email" class="input_text phone_input">
+            </div>
+            <div class="input_label clearfix">
+                <input type="password" name="password" class="input_text vcode_input" placeholder="请输入密码">
+            </div>
+
+            <div class="input_label btn_group">
+                {% if message %}
+            <input type="button" class="error_btn" value="{{ message }}">
+                {% endif %}
+                {% if register_form.message1 %}
+            <input type="button" class="error_btn" value="{{ register_form.message1 }}">
+                {% endif %}
+                {% if register_form.message2 %}
+            <input type="button" class="error_btn" value="{{ register_form.message2 }}">
+                {% endif %}
+            <div class="input_label btn_group">
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="注册">
+            </div>
+            <div class="register_agreement">注册拉勾代表你已同意<a href="http://www.lagou.com/privacy.html" target="_blank">《拉勾用户协议》</a>
+            </div>
+        </form>
+
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>

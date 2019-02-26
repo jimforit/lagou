@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>拉勾网</title>
+
+    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招"
+          name="keywords">
+
+    <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/collectlist.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link href="/static/css/main_delivery.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+
+<header id="header">候选人简历
+    <div class="left"><span class="corner"></span></div>
+</header>
+
+<div id="content">
+
+    <div class="tab">
+        <a href="#" onclick="show_all()" class="tab-item selected">待处理</a>
+        <a href="#" onclick="show_invited()" class="tab-item">已邀请面试</a>
+        <a href="#" onclick="show_unsuitable()" class="tab-item">已婉拒</a>
+    </div>
+    <ul class="list " id="all" style="display: block">
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="0">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户5836</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：资深前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：25k 上海
+                            </span>
+                    </p>
+
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验6年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+        </li></a>
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="1">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户5436</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+        </li></a>
+    </ul>
+    <ul class="list" id="invited" style="display: none">
+         <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="0">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户8374</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+         </li></a>
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="1">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户8324</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+        </li></a>
+    </ul>
+    <ul class="list" id="unsuitable" style="display: none">
+       <a href="{% url "resume_detail_page" %}">
+           <li class="activeable item" data-index="2">
+           <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户8854</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+           </li></a>
+    </ul>
+    <ul class="list" id="no_records" style="display: none">
+        <li class="list-empty">
+            <span class="text">暂无记录~</span>
+        </li>
+    </ul>
+
+</div>
+
+<!-- dep -->
+<script type="text/javascript">
+    function show_all() {
+        document.getElementById("all").style.display = "block";
+        document.getElementById("invited").style.display = "none";
+        document.getElementById("unsuitable").style.display = "none";
+        document.getElementById("no_records").style.display = "none";
+    }
+    function show_invited() {
+        document.getElementById("invited").style.display = "block";
+        document.getElementById("all").style.display = "none";
+        document.getElementById("unsuitable").style.display = "none";
+        document.getElementById("no_records").style.display = "none";
+    }
+    function show_unsuitable() {
+        document.getElementById("invited").style.display = "none";
+        document.getElementById("all").style.display = "none";
+        document.getElementById("unsuitable").style.display = "block";
+        document.getElementById("no_records").style.display = "none";
+    }
+
+</script>
+{% include "footer.html" %}
+</body>
+</html>

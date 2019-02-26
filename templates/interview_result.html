@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>【16k-30k】杏仁医生招聘资深前端工程师 - 上海人才招聘 - 拉勾网</title>
+
+    <meta content="资深前端工程师,资深前端工程师招聘,爱海企业管理咨询（上海）有限公司资深前端工程师招聘" name="keywords">
+
+    <meta content="发展好,福利好,氛围好,环境好 虹梅路2007号6号楼3楼" name="description">
+
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/collectlist.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link href="/static/css/main_delivery.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body ontouchstart="">
+
+<header id="header">面试详情
+    <div class="left"><span class="corner"></span></div>
+    <div class="right">
+        <span class="corner"></span>
+    </div>
+</header>
+<div id="content">
+
+    <div class="postitle">
+        <h2 class="title">拉勾5836</h2>
+    </div>
+    <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
+        <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" alt="" class="logo">
+        <div class="desc">
+            <div class="dleft">
+                <h2 class="title">
+                    资深前端工程师
+                </h2>
+                <p class="info">
+                    北京
+                    / 30岁
+                    / 李东君
+                </p>
+            </div>
+            <span class="dright"></span>
+        </div>
+    </div>
+    <div class="tab">
+            <a href="#" id="base_info" onclick="show_infos()" class="tab-item selected">面试评价</a>
+            <a href="#" id="position_able" onclick="show_positions()" class="tab-item">面试结果</a>
+            <a href="#" id="enterprice" onclick="show_comments()" class="tab-item">发放Offer</a>
+    </div>
+    <div class="positiondesc" id="product_info" style="display: block;">
+        <header class="header">
+            面试评价(0)
+        </header>
+        <div class="content">
+            <p></p>
+        </div>
+        <div class="fix_btn_group">
+                <a href="{% url "interview_comment_page" %}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">填写评价
+                </div></a>
+        </div>
+    </div>
+     <ul class="list" id="zhaopin" style="display: none">
+        <li class="activeable item" data-index="0">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">李东君</h2>
+                    <p class="item-info">
+                        <span class="item-pos">
+                            资深前端工程师
+                        </span>
+                    </p>
+                    <p class="item-time">2017-11-14</p>
+                </div>
+                <div class="desc-right">
+                    <div class="salary">
+                        通过
+                    </div>
+
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="positioneval" id="comments" style="display: none;">
+        <div class="eval-title">
+            确认是否发放offer
+        </div>
+        <ul class="list">
+            <li class="activeable item" data-index="0">
+             <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-welcome">
+                    <h2 class="item-title">李东君先生，欢迎您的加入</h2>
+                    <p class="item-info">
+                        <span class="item-pos">
+                            资深前端工程师
+                        </span>
+                    </p>
+                    <p class="item-time">2017-11-14</p>
+                </div>
+            </div>
+            </li>
+            <div class="fix_btn_group">
+                <a href="{% url "offer_page" %}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">发放Offer
+                </div></a>
+            </div>
+        </ul>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    function show_infos() {
+        document.getElementById("product_info").style.display = "block";
+        document.getElementById("comments").style.display = "none";
+        document.getElementById("zhaopin").style.display = "none";
+        document.getElementById("base_info").className="tab-item selected";
+        document.getElementById("position_able").className="tab-item";
+        document.getElementById("enterprice").className="tab-item";
+    }
+    function show_positions() {
+        document.getElementById("zhaopin").style.display = "block";
+        document.getElementById("comments").style.display = "none";
+        document.getElementById("product_info").style.display = "none";
+        document.getElementById("base_info").className="tab-item";
+        document.getElementById("position_able").className="tab-item selected";
+        document.getElementById("enterprice").className="tab-item";
+    }
+    function show_comments() {
+        document.getElementById("zhaopin").style.display = "none";
+        document.getElementById("product_info").style.display = "none";
+        document.getElementById("comments").style.display = "block";
+        document.getElementById("base_info").className="tab-item";
+        document.getElementById("position_able").className="tab-item";
+        document.getElementById("enterprice").className="tab-item selected";
+    }
+    function follow() {
+        if(document.getElementById("followtag").className === "icon notcoll"){
+            document.getElementById("followtag").className = "icon";
+            document.getElementById("followstatus").innerHTML = "已通过";
+        }else{
+            document.getElementById("followtag").className = "icon notcoll";
+            document.getElementById("followstatus").innerHTML = "未通过";
+        }
+    }
+
+
+</script>
+</body>
+</html>

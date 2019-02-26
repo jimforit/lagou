@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>拉勾网</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <script charset="UTF-8"></script>
+</head>
+<body style="font-size: 12px;">
+<div class="container cleafix">
+    <section class="form_container active" data-view="codeLogin">
+        <header class="form_header"><h2>发放Offer</h2></header>
+        <form class="form_body form_register" method="post">
+            <div class="input_label phone_wrapper">
+                <!--
+	@require "mobile/modules/country-code/main.js"
+	@require "mobile/modules/country-code/main.less"
+-->
+                <input type="text" class="input_text" value="李东君" readonly>
+                <input type="text" placeholder="请输入岗位信息" class="input_text">
+                <input type="text" placeholder="请输入岗位薪资" class="input_text">
+                <input type="text" placeholder="请输入职位描述" class="input_text">
+                <select class="input_text phone_input">
+                     <option value="#">请选择入职城市</option>
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
+                </select>
+            </div>
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="提交">
+            </div>
+        </form>
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>

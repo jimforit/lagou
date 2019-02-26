@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>微简历 - 拉勾网</title>
+
+    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
+
+    <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+
+    <link href="/static/css/normalize.css" rel="stylesheet">
+
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body ontouchstart="">
+
+<header id="header">微简历
+    <div class="left"><span class="corner"></span></div>
+    <div class="right">
+        <span class="corner"></span>
+    </div>
+</header>
+<!-- 一键投递接口 -->
+<div id="content">
+
+    <div class="postitle">
+        <h2 class="title">职称：资深前端工程师</h2>
+        <div class="collicon activeable">
+            <span class="icon"></span>
+            <span class="text">
+                                            已收藏
+                                    </span>
+        </div>
+    </div>
+
+    <div class="detail">
+        <div class="items">
+                                    <span class="item salary">
+                        <em class="icon"></em>
+                        <span class="text">25k</span>
+                    </span>
+            <span class="item workaddress">
+                        <em class="icon"></em>
+                        <span class="text">上海</span>
+                    </span>
+            <span class="item jobnature">
+                        <em class="icon"></em>
+                        <span class="text">全职</span>
+                    </span>
+            <span class="item workyear">
+                        <em class="icon"></em>
+                        <span class="text">5年</span>
+                    </span>
+            <span class="item education">
+                        <em class="icon"></em>
+                        <span class="text">
+                            本科                        </span>
+                    </span>
+        </div>
+        <!-- 诱惑 -->
+        <div class="temptation">
+            <p>自我描述：MySQL DBA，曾任职平安科技与百度，负责数据库架构搭建与运维工作。</p>
+        </div>
+    </div>
+
+    <div class="company activeable">
+        <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" alt="" class="logo">
+        <div class="desc">
+            <div class="dleft">
+                <h2 class="title">
+                    李东君
+                </h2>
+                <p class="info">
+                    华南理工大学
+                    / 软件工程
+                    / 29岁
+                </p>
+            </div>
+            <span class="dright"></span>
+        </div>
+    </div>
+
+    <div class="positiondesc">
+        <header class="header">
+            工作经历
+        </header>
+        <div class="content">
+            <p>2018.02-至今在百度担任高级数据库工程师，维护实例超过800+</p>
+        </div>
+    </div>
+
+    <div class="positioneval">
+        <div class="eval-title">
+            个人熟练掌握技能
+            <span id="total">(<span>5</span>)</span>
+        </div>
+        <ul class="list">
+            <li class="list-item-empty list-item">1.数量掌握python语言开发，开发过lagou 移动Web应用。</li>
+            <li class="list-item-empty list-item">2.精通MySQL高可用架构设计与高可用运维。</li>
+            <li class="list-item-empty list-item">3.精通Shell脚本开发，有4年电信软件运维开发经验。</li>
+            <li class="list-item-empty list-item">4.精通Oracle数据库高可用架构搭建。</li>
+        </ul>
+        <a class="eval-all" href="https://m.lagou.com/user/expsList_3824635.html" style="display: none;"></a>
+    </div>
+    {% if user.role_id == 2 %}
+    <a href="{% url "interview_page" %}">
+    <div class="fix_btn_group">
+        <div class="deliver deliver_resume rows_bar">发送面试邀请
+        </div>
+    </div>
+    </a>
+    {% else %}
+        {% include "footer.html" %}
+    {% endif %}
+</div>
+<!-- dep -->
+
+<script id="tpl-list-empty" type="text/html">
+    <li class="list-item-empty list-item">暂无面试评价</li>
+</script>
+</body>
+</html>

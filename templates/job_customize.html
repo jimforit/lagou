@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+        <title>拉勾网</title>
+    
+        <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
+    
+        <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
+    
+    <link href="/static/css/normalize.css" rel="stylesheet">
+
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+
+    <link href="/static/css/position.css" rel="stylesheet">
+<script data-require-id="custom/position/main" src="/static/js/main.js.下载" async=""></script></head>
+
+<body ontouchstart="">
+
+    <header id="header">设置定制信息<div class="left"><span class="corner"></span></div></header>
+
+    <div id="content">
+        <div class="info">
+            <span class="text">
+                <em class="left"></em>
+                    想找什么职位？
+                <em class="right"></em>
+            </span>
+        </div>
+        <div id="rinputer" onmousedown="common()" onmouseleave="visible()"><div class="rinputer">
+            <input class="inputer" id="job_name"  placeholder="输入你想定制的职位"><span class="button" onclick="visible()">OK</span>
+        </div>
+            <ul id="common_job" class="predata" style="display: none">
+                <li class="item" data-word="产品经理" onclick="pickup(this)" data-index="0">产品经理</li>
+                <li class="item" data-word="Java" onclick="pickup(this)" data-index="1">Java</li>
+                <li class="item" data-word="运营" onclick="pickup(this)" data-index="2">运营</li>
+                <li class="item" data-word="Android" onclick="pickup(this)" data-index="3">Android</li>
+                <li class="item" data-word="PHP" onclick="pickup(this)" data-index="4">PHP</li>
+                <li class="item" data-word="UI" onclick="pickup(this)" data-index="5">UI</li>
+                <li class="item" data-word="IOS" onclick="pickup(this)" data-index="6">IOS</li>
+                <li class="item" data-word="编辑" onclick="pickup(this)" data-index="7">编辑</li>
+                <li class="item" data-word="BD" onclick="pickup(this)" data-index="8">BD</li></ul>
+            <ul class="suggester"></ul></div>
+    </div>
+
+    <!-- dep -->
+
+
+{% include "footer.html" %}
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    function common() {
+        document.getElementById("common_job").style.display="block";
+    }
+    function visible() {
+        document.getElementById("common_job").style.display="none";
+    }
+    function pickup(obj) {
+        var text = $(obj).attr("data-word");
+        document.getElementById("job_name").value=text;
+        document.getElementById("common_job").style.display="none";
+    }
+</script>
+</body></html>

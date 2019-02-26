@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+</head>
+<body>
+<footer id="footer"><!--通用footer组件模板@author pooky@lagou.com-->
+    <div data-name="职位" data-index="0" data-type="custom" class="footer-tab-custom">
+        <a href="{% url 'job_list_page' %}"><span class="icon"></span>
+            <span class="text">职位</span></a>
+    </div>
+    <div data-name="搜索" data-index="1" data-type="search" class="footer-tab-search selected">
+        <a href="{% url 'search_page' %}">
+            <span class="icon selected"></span>
+            <span class="text">搜索</span>
+        </a>
+    </div>
+    <div data-name="我的" data-index="2" data-type="mine" class="footer-tab-mine">
+        <a href="{% url 'profile_page' %}">
+            <span class="icon"></span>
+            <span class="text">我的</span></a>
+    </div>
+</footer>
+</body>
+</html>

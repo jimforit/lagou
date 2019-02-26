@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>拉勾网</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <script charset="UTF-8"></script>
+</head>
+<body style="font-size: 12px;">
+<div class="container cleafix">
+    <section class="form_container active" data-view="codeLogin">
+        <header class="form_header"><h2>需求发布</h2></header>
+        <form class="form_body form_register" method="post">
+            <div class="input_label phone_wrapper">
+                <!--
+	@require "mobile/modules/country-code/main.js"
+	@require "mobile/modules/country-code/main.less"
+-->
+
+                <input type="text" placeholder="请输入岗位信息" class="input_text">
+                <input type="text" placeholder="请输入学历要求" class="input_text">
+                <input type="text" placeholder="请输入职位诱惑" class="input_text">
+                 <select class="input_text">
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
+                </select>
+                 <select class="input_text">
+                     <option value="#"><span class="hint_text">请选择薪资</span></option>
+                     <option value="3K-8K">3K-8K</option>
+                     <option value="8K-12K">8K-12K</option>
+                     <option value="13-15K">13-15K</option>
+                     <option value="15K-20K">15K-20K</option>
+                     <option value="20K-30K">20K-30K</option>
+                </select>
+
+                <select class="input_text">
+                    <option value="TSL">天使轮</option>
+                    <option value="AL">A轮</option>
+                    <option value="BL">B轮</option>
+                    <option value="CL">C轮</option>
+                    <option value="WRZ">未融资</option>
+                    <option value="BXY">不需要融资</option>
+                </select>
+                <select class="input_text">
+                    <option value="JXQY">10-49人</option>
+                    <option value="XQY">50-99人</option>
+                    <option value="ZXQY">100-499人</option>
+                    <option value="ZQY">500-1000人</option>
+                    <option value="DQY">1000-5000人</option>
+                    <option value="JT">5000人以上</option>
+                </select>
+                <select class="input_text">
+                    <option value="MI">移动互联网</option>
+                    <option value="ET">电信</option>
+                    <option value="FT">金融</option>
+                    <option value="DS">电商</option>
+                    <option value="ZQ">证券</option>
+                    <option value="WLW">物联网</option>
+                </select>
+                 <select class="input_text">
+                    <option value="YJ">应届生</option>
+                    <option value="XS">1-3年</option>
+                     <option value="ZJ">3-5年</option>
+                     <option value="GJ">5-7年</option>
+                     <option value="ZJ">7年以上</option>
+                     <option value="DK">10年以上</option>
+                </select>
+                <select class="input_text">
+                    <option value="QZ">全职</option>
+                    <option value="JZ">兼职</option>
+                </select>
+                <input type="text" placeholder="请输入职位描述" class="input_text">
+            </div>
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="提交">
+            </div>
+        </form>
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>
