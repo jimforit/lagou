@@ -1,76 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d049ae-d2d3-4c38-876d-95fdf3a28e7b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/0002_auto_20190226_1309.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/0003_auto_20190226_1310.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/0004_remove_resumer_graduate_time.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/0005_auto_20190226_1340.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/applyers/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/recruiters/views.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/__init__.py" afterPath="$PROJECT_DIR$/apps/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lagou/settings.py" afterPath="$PROJECT_DIR$/lagou/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lagou/urls.py" afterPath="$PROJECT_DIR$/lagou/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lagou/wsgi.py" afterPath="$PROJECT_DIR$/lagou/wsgi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/collectlist.css" afterPath="$PROJECT_DIR$/static/css/collectlist.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/interview.css" afterPath="$PROJECT_DIR$/static/css/interview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/intro.css" afterPath="$PROJECT_DIR$/static/css/intro.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/list.css" afterPath="$PROJECT_DIR$/static/css/list.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.html_aio_fecea31.css" afterPath="$PROJECT_DIR$/static/css/main.html_aio_fecea31.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/collections.html" afterPath="$PROJECT_DIR$/templates/collections.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/comment.html" afterPath="$PROJECT_DIR$/templates/comment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/company.html" afterPath="$PROJECT_DIR$/templates/company.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/companylist.html" afterPath="$PROJECT_DIR$/templates/companylist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/deliveries.html" afterPath="$PROJECT_DIR$/templates/deliveries.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/deliveries_recruiter.html" afterPath="$PROJECT_DIR$/templates/deliveries_recruiter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/footer.html" afterPath="$PROJECT_DIR$/templates/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/footer_index.html" afterPath="$PROJECT_DIR$/templates/footer_index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/interview.html" afterPath="$PROJECT_DIR$/templates/interview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/interview_comment.html" afterPath="$PROJECT_DIR$/templates/interview_comment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/interview_detail.html" afterPath="$PROJECT_DIR$/templates/interview_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/interview_result.html" afterPath="$PROJECT_DIR$/templates/interview_result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/interviews_record.html" afterPath="$PROJECT_DIR$/templates/interviews_record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/invitation.html" afterPath="$PROJECT_DIR$/templates/invitation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/job.html" afterPath="$PROJECT_DIR$/templates/job.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/lagou.html" afterPath="$PROJECT_DIR$/templates/lagou.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/my_interviews.html" afterPath="$PROJECT_DIR$/templates/my_interviews.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/offer.html" afterPath="$PROJECT_DIR$/templates/offer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profile.html" afterPath="$PROJECT_DIR$/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/recruiter.html" afterPath="$PROJECT_DIR$/templates/recruiter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/resume.html" afterPath="$PROJECT_DIR$/templates/resume.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/resume_collections.html" afterPath="$PROJECT_DIR$/templates/resume_collections.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/resume_detail.html" afterPath="$PROJECT_DIR$/templates/resume_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/resumelist.html" afterPath="$PROJECT_DIR$/templates/resumelist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_page_index.py" afterPath="$PROJECT_DIR$/test/test_page_index.py" />
-    </list>
+    <list default="true" id="b4d049ae-d2d3-4c38-876d-95fdf3a28e7b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
