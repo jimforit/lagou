@@ -32,153 +32,29 @@
 
 <div id="content">
     <ul class="list">
-        <li class="activeable" data-positionid="4261990" data-companyid="81107">
+        {% for item in company_list %}
+         <a href="{% url "enterprice:company_page" item.id%}"><li class="activeable" data-positionid="3752368" data-companyid="147">
             <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="../static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" alt="" class="logo">
+                <img src="{{ item.logo }}" class="logo">
                 <div class="desc">
                     <div class="dleft">
                         <h2 class="title">
-                            杏仁医生
+                            {{ item.name }}
                         </h2>
                         <p class="info">
-                            移动互联网,O2O
-                            / B轮
-                            / 500-2000人
+                            {{ item.enterprice_type }}
+                            / {{ item.finance_stage }}
+                            / {{ item.enterprice_gm }}
                         </p>
                     </div>
                     <span class="dright"></span>
                 </div>
             </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgpOIFsPxgKAQ_YbAAC603sdDhs222.png" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            一亩田
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / A轮
-                            / 50-99人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/Cgp3O1Z3tcWAYsX0AACxApgrVbA279.jpg" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            易思卓
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / A轮
-                            / 50-99人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgqKkVYp7yGAdgmFAAAn5rftm8I718.jpg" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            潮流网络
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / 未融资
-                            / 50-99人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgoB5luDrQ2ADcz3AAAgzr89WRI801.png" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            XSKY
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / B轮
-                            / 100-499人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgoB5luDrQ2ADcz3AAAgzr89WRI801.png" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            XSKY
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / B轮
-                            / 100-499人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable" data-positionid="3752368" data-companyid="147">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgoB5luDrQ2ADcz3AAAgzr89WRI801.png" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            XSKY
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / B轮
-                            / 100-499人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
-        <li class="activeable">
-            <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-                <img src="/static/images/CgoB5luDrQ2ADcz3AAAgzr89WRI801.png" class="logo">
-                <div class="desc">
-                    <div class="dleft">
-                        <h2 class="title">
-                            XSKY
-                        </h2>
-                        <p class="info">
-                            移动互联网,O2O
-                            / B轮
-                            / 100-499人
-                        </p>
-                    </div>
-                    <span class="dright"></span>
-                </div>
-            </div>
-        </li>
+        </li></a>
+        {% endfor %}
         <li class="activeable list-more">加载更多</li>
     </ul>
-    <div id="copyright"><p>©2015 lagou.com, all right reserved </p>
+    <div id="copyright"><p>©2018 www.github.jimforit.com, all right reserved </p>
         <div class="copyright-item"><span class="phone active">移动版&nbsp;·&nbsp;</span><span class="computer">电脑版&nbsp;·&nbsp;</span><a
                 href="https://m.lagou.com/#header">回顶部</a></div>
     </div>

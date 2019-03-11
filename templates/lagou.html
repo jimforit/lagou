@@ -30,7 +30,7 @@
         <div class="logininfo">
                         <!-- 未登录 -->
                 <div class="nologin center">
-                    <a class="loginbut" href="{% url "login_page" %}" target="_self">登录 / 注册</a>
+                    <a class="loginbut" href="{% url "user:login_page" %}" target="_self">登录 / 注册</a>
                 </div>
                     </div>
         <!-- 登录地址-->
@@ -38,18 +38,18 @@
         
         <div class="buttons">
             
-            <a class="button deliver" href="{% url "delivery_page" %}">
+            <a class="button deliver" href="{% url "delivery:delivery_page"  %}">
                 <span>投递</span>
                 
                 
             </a>
-            <a class="button interview" href="{% url "myinterview_page" %}">面试</a>
+            <a class="button interview" href="{% url "interview:myinterview_page" %}">面试</a>
             
-            <a class="button invitation" href="{% url "interview_page" %}">
+            <a class="button invitation" href="{% url "interview:invitation_page" %}">
                 <span>邀约</span>
                             </a>
             
-            <a class="button collect" href="{% url "collections_page" %}">收藏</a>
+            <a class="button collect" href="{% url "collection:collections_page" %}">收藏</a>
         </div>
             </div>
 

@@ -12,7 +12,7 @@
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
 
-    <title>【16k-30k】杏仁医生招聘资深前端工程师 - 上海人才招聘 - 拉勾网</title>
+    <title>拉勾网{{ company.name }}详情页</title>
 
     <meta content="资深前端工程师,资深前端工程师招聘,爱海企业管理咨询（上海）有限公司资深前端工程师招聘" name="keywords">
 
@@ -35,7 +35,7 @@
 <div id="content">
 
     <div class="postitle">
-        <h2 class="title">杏仁医生</h2>
+        <h2 class="title">{{ company.name }}</h2>
         <div class="collicon activeable" onclick="follow()">
             <span class="icon notcoll" id="followtag"></span>
             <span class="text" id="followstatus">
@@ -44,16 +44,16 @@
         </div>
     </div>
     <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-        <img src="../static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" alt="" class="logo">
+        <img src="{{ company.logo }}" alt="" class="logo">
         <div class="desc">
             <div class="dleft">
                 <h2 class="title">
-                    杏仁医生
+                    {{ company.name }}
                 </h2>
                 <p class="info">
-                    移动互联网,O2O
-                    / B轮
-                    / 500-2000人
+                    {{ company.enterprice_type }}
+                    / {{ company.finance_stage }}
+                    / {{ company.enterprice_gm }}
                 </p>
             </div>
             <span class="dright"></span>
@@ -61,7 +61,7 @@
     </div>
     <div class="tab">
             <a href="#" id="base_info" onclick="show_infos()" class="tab-item selected">基本信息</a>
-            <a href="#" id="position_able" onclick="show_positions()" class="tab-item">在招职位(3)</a>
+            <a href="#" id="position_able" onclick="show_positions()" class="tab-item">在招职位({{ position_list.count }})</a>
             <a href="#" id="enterprice" onclick="show_comments()" class="tab-item">企业空间</a>
     </div>
     <div class="positiondesc" id="product_info" style="display: block;">
@@ -69,7 +69,7 @@
             产品介绍
         </header>
         <div class="content">
-            <p>杏仁医生APP是一款专业高效的医患沟通管理工具。医生可以通过杏仁医生与其就诊的患者建立更深入紧密的联系，并提供特色的随诊、跟踪、交流、检索功能，是医生的重要行医辅助工具，可以为自己的患者群提供各种多样的特色服务。同时，患者可以通过杏仁医生与自己熟悉信任的医生建立长期稳定的联系，有充分的时间和机会与医生沟通，直接解决传统门诊的沟通短板。</p>
+            <p>{{ company.product_desc }}</p>
         </div>
     </div>
     <div class="positiondesc" id="company_info" style="display: block;">
@@ -77,110 +77,36 @@
             公司介绍
         </header>
         <div class="content">
-            <p>我们的故事：
-
-在中国，几乎每位医生都要面对超负荷的工作。。研究表明，中国医生的“职业耗竭率”实际高达66.5～76.9％。医疗机构诊疗人次的逐年增长、优质医疗资源分布的不平衡、医患关系的举步维艰、医疗体制的单一性、模式化等问题，让超过三分之二的中国医生，正在经历职业倦怠和职业耗竭。
-
-
-
-作为中国优秀医生的职业发展平台，杏仁医生始终聚焦于中国广大医生群体。杏仁医生由澳籍华人马丁、徐琳于2013年联合创建，总部位于上海，前身是“看处方”医疗互助平台。
-
-
-
-如今，杏仁医生累积了43万实名认证使用的医生，已向近千万患者提供过线上/ 线下结合的优质医疗服务。旗下杏仁门诊经过2年多的运营，拥有覆盖全国的互联网+开放型医疗中心和全国最大的日间手术中心网络，依托首创的合伙人制度及Wework共享医疗概念，已成为私立门诊领域新标杆。
-
-
-
-2018年8月8日，杏仁医生与腾讯旗下企鹅医生宣布战略合并，新集团公司统称为“企鹅杏仁”。目前拥有33家线下诊所门店，覆盖全国多个一二线城市。合并后的企鹅杏仁以“人”为核心，未来将布局线上线下一体的大健康服务体系，推动中国的大健康产业发展变革，致力于用科技使高品质的健康与医疗服务，变得人人可及。
-
-
-
-我们的理念：
-
-“信任医生”——杏仁医生以医生群体为立足点，通过移动互联网打造医生专用的患者管理平台，以更便捷、高效的方式，帮助医生维护、管理患者和经营医疗服务业务，为患者提供更好的治疗方案，建立医生与患者之间互相信任、彼此联结的关系。
-
-
-
-我们的使命：
-
-                用科技使高品质健康与医疗服务，变得人人可及。</p>
+            <p>{{ company.enterprice_desc }}</p>
         </div>
     </div>
      <ul class="list" id="zhaopin" style="display: none">
-        <li class="activeable item" data-index="0">
-
-            <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
+         {% for item in position_list %}
+        <a href="{% url "job:job_page" item.id%}"><li class="activeable item" data-index="0">
+            <img src="{{ item.enterprice.logo }}" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">杏仁医生</h2>
+                    <h2 class="item-title">{{ item.enterprice.name }}</h2>
                     <p class="item-info">
                         <span class="item-pos">
-                            资深前端工程师 [ 上海 ]
+                            {{ item.name }} [ {{ item.city }} ]
                         </span>
                     </p>
-                    <p class="item-time">2017-11-14</p>
+                    <p class="item-time">{{ item.create_time }}</p>
                 </div>
                 <div class="desc-right">
                     <div class="salary">
-                        16K-30K
+                        {{ item.salary }}
                     </div>
                     <div class="experience">
                          <span>
-                            经验3-5年
+                            {{ item.experience_required }}
                         </span>
                     </div>
                 </div>
             </div>
-        </li>
-         <li class="activeable item" data-index="0">
-
-            <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
-            <div class="item-desc">
-                <div class="desc-left">
-                    <h2 class="item-title">杏仁医生</h2>
-                    <p class="item-info">
-                        <span class="item-pos">
-                            前端工程师 [ 上海 ]
-                        </span>
-                    </p>
-                    <p class="item-time">2019-02-22</p>
-                </div>
-                <div class="desc-right">
-                    <div class="salary">
-                        10K-20K
-                    </div>
-                    <div class="experience">
-                         <span>
-                            经验1-3年
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </li>
-         <li class="activeable item" data-index="0">
-            <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
-            <div class="item-desc">
-                <div class="desc-left">
-                    <h2 class="item-title">杏仁医生</h2>
-                    <p class="item-info">
-                        <span class="item-pos">
-                            数据分析工程师  [ 上海 ]
-                        </span>
-                    </p>
-                    <p class="item-time">2019-02-22</p>
-                </div>
-                <div class="desc-right">
-                    <div class="salary">
-                        10K-18K
-                    </div>
-                    <div class="experience">
-                         <span>
-                            经验1-3年
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </li>
+        </li></a>
+         {% endfor %}
     </ul>
     <div class="positioneval" id="comments" style="display: none;">
         <div class="eval-title">
@@ -193,7 +119,7 @@
         <a class="eval-all" href="#" style="display: none;"></a>
     </div>
 
-
+{% include "footer.html" %}
 </div>
 <script type="text/javascript">
     function show_infos() {

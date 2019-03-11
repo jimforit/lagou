@@ -28,171 +28,100 @@
 <body ontouchstart="">
 
 <header id="header">投递记录
-    <div class="left"><span class="corner"></span></div>
+    <div class="left"><a href="{% url "user:profile_page" %}"><span class="corner"></span></a></div>
 </header>
 
 <div id="content">
 
     <div class="tab">
-        <a href="#" onclick="show_all()" class="tab-item selected">全部</a>
-        <a href="#" onclick="show_invited()" class="tab-item">邀请面试</a>
-        <a href="#" onclick="show_unsuitable()" class="tab-item">不合适</a>
+        <a href="#" id="all_tab" onclick="show_all()" class="tab-item selected">等待回复</a>
+        <a href="#" id="invite_tab" onclick="show_invited()" class="tab-item">邀请面试</a>
+        <a href="#" id="unsuitable_tab" onclick="show_unsuitable()" class="tab-item">不合适</a>
     </div>
     <ul class="list " id="all" style="display: block">
-        <li class="activeable item" data-index="0">
-
-            <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
+        {% for item in delivery_dd_list %}
+            <li class="activeable item" data-index="0">
+            <img src="{{ item.enterprice.logo }}" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">杏仁医生</h2>
+                    <h2 class="item-title">{{ item.enterprice.name }}</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                资深前端工程师 [ 上海 ]
+                                {{ item.position.name }} [ {{ item.position.city }} ]
                             </span>
                     </p>
-                    <p class="item-time">2017-11-14</p>
+                    <p class="item-time">{{ item.update_time }}</p>
                 </div>
                 <div class="desc-right">
                     <div class="salary">
-                        16k-30k
+                        {{ item.position.salary }}
                     </div>
                     <div class="experience">
                          <span>
-                            经验3-5年
+                            {{ item.position.experience_required }}
                         </span>
                     </div>
                 </div>
             </div>
         </li>
-        <li class="activeable item" data-index="1">
-
-            <img src="/static/images/CgotOVxulEKAbWs_AABOc-FzmGo115.jpg" class="item-logo">
-            <div class="item-desc">
-                <div class="desc-left">
-                    <h2 class="item-title">芦苇科技</h2>
-                    <p class="item-info">
-                            <span class="item-pos">
-                                商务助理 [ 广州 ]
-                            </span>
-                    </p>
-                    <p class="item-time">2017-12-29</p>
-                </div>
-                <div class="desc-right">
-                    <div class="salary">
-                        3k-6k
-                    </div>
-                    <div class="experience">
-                         <span>
-                            经验1-3年
-                        </span>
-                    </div>
-                </div>
-        </li>
-
-        <li class="activeable item" data-index="2">
-
-            <img src="/static/images/CgqKkVaDfB-AWCpsAAAVDbyF3us617.png" class="item-logo">
-            <div class="item-desc">
-                <div class="desc-left">
-                    <h2 class="item-title">华通</h2>
-                    <p class="item-info">
-                            <span class="item-pos">
-                                测试开发 [ 深圳 ]
-                            </span>
-                    </p>
-                    <p class="item-time">2017-12-27</p>
-                </div>
-                <div class="desc-right">
-                    <div class="salary">
-                        25K-40K
-                    </div>
-                    <div class="experience">
-                         <span>
-                            经验5-10年
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
     <ul class="list" id="invited" style="display: none">
-        <li class="activeable item" data-index="0">
-
-            <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
+        {% for item in delivery_yq_list %}
+            <li class="activeable item" data-index="0">
+            <img src="{{ item.enterprice.logo }}" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">杏仁医生</h2>
+                    <h2 class="item-title">{{ item.enterprice.name }}</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                资深前端工程师 [ 上海 ]
+                                {{ item.position.name }} [ {{ item.position.city }} ]
                             </span>
                     </p>
-                    <p class="item-time">2017-11-14</p>
+                    <p class="item-time">{{ item.update_time }}</p>
                 </div>
                 <div class="desc-right">
                     <div class="salary">
-                        16k-30k
+                        {{ item.position.salary }}
                     </div>
                     <div class="experience">
                          <span>
-                            经验3-5年
+                            {{ item.position.experience_required }}
                         </span>
                     </div>
                 </div>
             </div>
         </li>
-        <li class="activeable item" data-index="1">
-
-            <img src="/static/images/CgotOVxulEKAbWs_AABOc-FzmGo115.jpg" class="item-logo">
-            <div class="item-desc">
-                <div class="desc-left">
-                    <h2 class="item-title">芦苇科技</h2>
-                    <p class="item-info">
-                            <span class="item-pos">
-                                商务助理 [ 广州 ]
-                            </span>
-                    </p>
-                    <p class="item-time">2017-12-29</p>
-                </div>
-                <div class="desc-right">
-                    <div class="salary">
-                        3k-6k
-                    </div>
-                    <div class="experience">
-                         <span>
-                            经验1-3年
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
     <ul class="list" id="unsuitable" style="display: none">
+        {% for item in delivery_wj_list %}
         <li class="activeable item" data-index="2">
 
-            <img src="/static/images/CgqKkVaDfB-AWCpsAAAVDbyF3us617.png" class="item-logo">
+            <img src="{{ item.enterprice.logo }}" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">华通</h2>
+                    <h2 class="item-title">{{ item.enterprice.name }}</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                测试开发 [ 深圳 ]
+                                {{ item.position.name }} [ {{ item.position.city }} ]
                             </span>
                     </p>
-                    <p class="item-time">2017-12-27</p>
+                    <p class="item-time">{{ item.update_time }}</p>
                 </div>
                 <div class="desc-right">
                     <div class="salary">
-                        25K-40K
+                        {{ item.position.salary }}
                     </div>
                     <div class="experience">
                          <span>
-                            经验5-10年
+                            {{ item.position.experience_required }}
                         </span>
                     </div>
                 </div>
             </div>
         </li>
+        {% endfor %}
     </ul>
     <ul class="list" id="no_records" style="display: none">
         <li class="list-empty">
@@ -206,6 +135,9 @@
 <script type="text/javascript">
     function show_all() {
         document.getElementById("all").style.display = "block";
+        document.getElementById("all_tab").className = "tab-item selected";
+        document.getElementById("invite_tab").className = "tab-item";
+        document.getElementById("unsuitable_tab").className = "tab-item";
         document.getElementById("invited").style.display = "none";
         document.getElementById("unsuitable").style.display = "none";
         document.getElementById("no_records").style.display = "none";
@@ -215,12 +147,18 @@
         document.getElementById("all").style.display = "none";
         document.getElementById("unsuitable").style.display = "none";
         document.getElementById("no_records").style.display = "none";
+        document.getElementById("all_tab").className = "tab-item";
+        document.getElementById("invite_tab").className = "tab-item selected";
+        document.getElementById("unsuitable_tab").className = "tab-item";
     }
     function show_unsuitable() {
         document.getElementById("invited").style.display = "none";
         document.getElementById("all").style.display = "none";
         document.getElementById("unsuitable").style.display = "block";
         document.getElementById("no_records").style.display = "none";
+        document.getElementById("all_tab").className = "tab-item";
+        document.getElementById("invite_tab").className = "tab-item";
+        document.getElementById("unsuitable_tab").className = "tab-item selected";
     }
 
 </script>
