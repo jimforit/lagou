@@ -1,1 +1,0 @@
-geetest_1550681543753({"status": "success", "data": {"type": "sense", "path": "/static/js/sense.1.1.5.js", "static_servers": ["static.geetest.com", "dn-staticdown.qbox.me"]}})
