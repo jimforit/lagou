@@ -1,0 +1,123 @@
+//初始化已创建在线简历页面社交网络背景图
+$(function(){
+	if($(".social_logo") && $(".social_logo a").length>0){
+		var sns_is = $(".social_logo a");
+		var sns_el = $(".logo_content");
+		var left = $(".social_left");
+		var right = $(".social_right");
+		var len = sns_is.length;
+		var total_w = (len-4)*54 + 216 ;
+		if(len == 1){
+			sns_el.css({
+				"left": "50%",
+				"margin-left":"-25px"
+			});	
+		}else if(len == 2){
+			sns_el.css({
+				"left": "50%",
+				"margin-left":"-50px"
+			});	
+		}else if(len == 3){
+			sns_el.css({
+				"left": "50%",
+				"margin-left":"-77px"
+			});
+		}else if(len == 4){
+			sns_el.css({
+				"left": "0px",
+			});
+		}else if(sns_is.length > 4){
+			right.show();
+			sns_el.width(total_w);
+		}
+		sns_is.each(function(i){
+			var sns_type = $(this).data("sns");
+			switch(parseInt(sns_type)){
+  				case 1: 
+  					$(this).addClass("sns1");
+  				break; 
+  				
+  				case 2: 
+  					$(this).addClass("sns2");	  					
+  				break; 
+  				
+  				case 3: 
+  					$(this).addClass("sns3");	
+  				break; 
+  				
+  				case 4: 
+  					$(this).addClass("sns4");
+  				break; 
+  				
+  				case 5: 
+  					$(this).addClass("sns5");
+  				break; 
+  				
+  				case 6:
+  					$(this).addClass("sns6");
+  				break; 
+  				
+  				case 7:
+  					$(this).addClass("sns7");
+  					break; 
+  				case 8:
+  					$(this).addClass("sns8");
+  					break; 
+  				
+  				case 9:
+  					$(this).addClass("sns9");
+  					break; 
+  				
+  				case 10:
+  					$(this).addClass("sns10");
+  					break; 
+  				
+  				case 11:
+  					$(this).addClass("sns11");
+  					break; 
+  				
+  				case 12:
+  					$(this).addClass("sns12");
+  					break; 			
+			}
+		});
+		
+		var width = sns_el.width() ;
+		var index = Math.floor(width/221) ;
+		var num = 0;
+		right.on("click",function(){
+			num++;
+			var left_l = parseInt(sns_el.position().left) - 216;
+			var that = $(this);
+			sns_el.animate({"left": left_l},"slow",function(){
+				left.show();
+				if(index == num){
+					that.hide();
+					return;
+				}
+			}) ;
+		})
+		
+		left.on("click",function(){
+			num--;
+			var left_l = parseInt(sns_el.position().left) + 216;
+			var that = $(this);
+			sns_el.animate({"left": left_l},"slow",function(){
+				right.show();
+				if(num == 0){
+					that.hide();
+					return;
+				}
+			});
+		})
+	}
+
+	//技能评价
+	$('.skill_bar').each(function(){
+		var percent = $(this).attr('data-skillLevel');
+		var width = $(this).outerWidth();
+		var pre = percent / 100 * width + 10;
+		$(this).find('.bar_inner').width(pre);
+	});
+})
+	

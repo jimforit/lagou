@@ -11,19 +11,26 @@
     <script charset="UTF-8"></script>
 </head>
 <body style="font-size: 12px;">
+<header id="header">面试邀请函
+    <div class="left"><a href="{% url "resume:resume_detail_page" resume.id %}"><span class="corner"></span></a></div>
+</header>
 <div class="container cleafix">
     <section class="form_container active" data-view="codeLogin">
         <header class="form_header"><h2>面试邀请</h2></header>
-        <form class="form_body form_register" method="post">
+        <form class="form_body form_register" method="post" action="{% url "delivery:delivery_interview_page" resume.user_id %}">
             <div class="input_label phone_wrapper">
                 <!--
 	@require "mobile/modules/country-code/main.js"
 	@require "mobile/modules/country-code/main.less"
 -->
-                <input type="text" class="input_text" value="李东君" readonly>
-                <input type="text" placeholder="请输入岗位信息" class="input_text">
-                <input type="text" placeholder="请输入面邀信息" class="input_text">
-                <input type="text" placeholder="请输入职位描述" class="input_text">
+                <input type="text" name="applier" class="input_text_resume" value="{{ resume.name }}" readonly>
+                 <select name="position" class="input_text_resume">
+                     <option value=""><span class="hint_text">请选择岗位</span></option>
+                    {% for item in position_list   %}
+                        <option value="{{ item.id }}">{{ item.name }}</option>
+                    {% endfor %} }}
+                </select>
+                <input type="text" name="invitation" placeholder="请输入面邀信息" class="input_text_resume">
             </div>
             <div class="input_label btn_group">
                 <input type="submit" class="submit_btn" value="提交">

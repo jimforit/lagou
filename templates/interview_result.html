@@ -27,27 +27,27 @@
 <body ontouchstart="">
 
 <header id="header">面试详情
-    <div class="left"><span class="corner"></span></div>
+    <div class="left"><a href="{% url "interview:interview_record_page" %}"><span class="corner"></span></a></div>
     <div class="right">
-        <span class="corner"></span>
+        <a href="{% url "job:job_list_page" %}"><span class="corner"></span></a>
     </div>
 </header>
 <div id="content">
 
     <div class="postitle">
-        <h2 class="title">拉勾5836</h2>
+        <h2 class="title">{{ resume_info.name }}</h2>
     </div>
     <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
         <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" alt="" class="logo">
         <div class="desc">
             <div class="dleft">
                 <h2 class="title">
-                    资深前端工程师
+                    {{ interview_detail.position.name }}
                 </h2>
                 <p class="info">
-                    北京
-                    / 30岁
-                    / 李东君
+                    {{ resume_info.desire_city }}
+                    / {{ resume_info.age }}岁
+                    / {{ resume_info.name }}
                 </p>
             </div>
             <span class="dright"></span>
@@ -66,7 +66,7 @@
             <p></p>
         </div>
         <div class="fix_btn_group">
-                <a href="{% url "interview_comment_page" %}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">填写评价
+                <a href="{% url "interview:interview_comment_page" %}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">填写评价
                 </div></a>
         </div>
     </div>
@@ -76,17 +76,21 @@
             <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">李东君</h2>
+                    <h2 class="item-title">{{ resume_info.name }}</h2>
                     <p class="item-info">
                         <span class="item-pos">
-                            资深前端工程师
+                            {{ interview_detail.position.name }}
                         </span>
                     </p>
-                    <p class="item-time">2017-11-14</p>
+                    <p class="item-time">{{ interview_detail.update_time }}</p>
                 </div>
                 <div class="desc-right">
                     <div class="salary">
-                        通过
+                        {% if interview_detail.interview_status == "YM" %}
+                        待定
+                            {% elif interview_detail.interview_status == "JM" %}
+                            未开始
+                        {% endif %}
                     </div>
 
                 </div>
@@ -102,18 +106,18 @@
              <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
             <div class="item-desc">
                 <div class="desc-welcome">
-                    <h2 class="item-title">李东君先生，欢迎您的加入</h2>
+                    <h2 class="item-title">{{ resume_info.name }}先生，您已被录用</h2>
                     <p class="item-info">
                         <span class="item-pos">
-                            资深前端工程师
+                            {{ interview_detail.position.name }}
                         </span>
                     </p>
-                    <p class="item-time">2017-11-14</p>
+                    <p class="item-time">{{ interview_detail.update_time }}</p>
                 </div>
             </div>
             </li>
             <div class="fix_btn_group">
-                <a href="{% url "offer_page" %}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">发放Offer
+                <a href="{% url "offer:offer_page" interview_detail.id%}"><div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635" style="display: block;">发放Offer
                 </div></a>
             </div>
         </ul>

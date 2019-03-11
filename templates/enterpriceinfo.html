@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html data-dpr="1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>拉勾网</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.html_aio_fecea31.css">
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <script charset="UTF-8"></script>
+</head>
+<body ontouchstart>
+<div class="container cleafix">
+    <section class="form_container active" data-view="codeLogin">
+        <header class="form_header"><h2>请填写企业信息</h2></header>
+        {{ message }}
+        <form class="form_body form_register" method="post" action="{% url "enterprice:company_info_page" %}">
+            <div class="input_label phone_wrapper">
+                <!--
+	@require "mobile/modules/country-code/main.js"
+	@require "mobile/modules/country-code/main.less"
+-->             <span style="color: red">{{ message }}</span>
+                <input type="text" name="name" placeholder="请输入企业名称" class="input_text_resume">
+                <input type="text" name="product_desc" placeholder="请填写产品介绍" class="input_text_resume">
+                <input type="text" name="enterprice_desc" placeholder="请填写公司介绍" class="input_text_resume">
+                <input type="text" name="address" placeholder="请填写公司地址" class="input_text_resume">
+                <input type="text" name="city" placeholder="请填写所在城市" class="input_text_resume">
+                <select class="input_text_resume" name="enterprice_gm">
+                    <option value="">企业规模</option>
+                    <option value="10-49人">10-49人</option>
+                    <option value="50-99人">50-99人</option>
+                    <option value="100-499人">100-499人</option>
+                    <option value="500-1000人">500-1000人</option>
+                    <option value="1000-5000人">1000-5000人</option>
+                    <option value="5000人以上">5000人以上</option>
+                </select>
+                 <select class="input_text_resume" name="finance_sg">
+                     <option value="">融资阶段</option>
+                    <option value="未融资">未融资</option><option value="天使轮">天使轮</option>
+                    <option value="A轮">A轮</option><option value="B轮">B轮</option>
+                     <option value="C轮">C轮</option><option value="不需要融资">不需要融资</option>
+                </select>
+                <select class="input_text_resume" name="enterprice_ty">
+                    <option value="">所属行业</option>
+                    <option value="移动互联网">移动互联网</option><option value="电信">电信</option>
+                    <option value="金融">金融</option><option value="电商">电商</option>
+                     <option value="证券">证券</option><option value="物联网">物联网</option>
+                </select>
+                <span >请上传企业LOGO:</span><input type="file" name="self_image"  class="input_image">
+            </div>
+            <div class="input_label btn_group">
+                <input type="submit" class="submit_btn" value="提交">
+            </div>
+        </form>
+    </section>
+</div>
+<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    function hm() {
+        var obj = document.getElementById("cr_code");
+        obj.style.display="block";
+
+    }
+    function pickup(obj) {
+           var text = $(obj).attr("data-code");
+           var dest_obj = document.getElementById("area_code");
+           dest_obj.innerHTML=text;
+           document.getElementById("cr_code").style.display="none";
+    }
+
+</script>
+</body>
+</html>

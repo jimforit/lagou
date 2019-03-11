@@ -26,7 +26,7 @@
 
 <div id="content">
     <!--plus描述-->
-    <div id="invited_closed" class="plus">
+    <div id="invited_closed" class="plus" style="display:{{ none }};">
         <div class="bulb"></div>
         <div class="plusbtn">
             <span>已关闭</span>
@@ -38,7 +38,7 @@
     </div>
 
     <!--plus功能描述-->
-    <div class="explain" id="explain_closed">
+    <div class="explain" id="explain_closed" style="display:{{ none }}";>
         <div class="txt">
         <h1>功能说明:</h1>
         </div>
@@ -59,7 +59,7 @@
             <p class="indent">来决定是否邀请你参加面试。</p>
         </div>
     </div>
-    <div class="plus" id="invited_open" style="display: none;">
+    <div class="{{ class_name }}" id="invited_open" style="display: {{ block }};">
         <div class="plusbtn">
             <span>已开启</span>
             <div id="close_invited" onclick="show_closed()" class="btn" >
@@ -67,9 +67,9 @@
                 <i class="close"></i>
             </div>
         </div>
-        <div class="plusbtn"><a href="#" class="shield">设置要屏蔽的企业 &gt;</a></div>
+        <div class="plusbtn"><a href="#" class="shield">设置要屏蔽的企业</a></div>
     </div>
-    <div class="explain" id="explain_open" style="display: none">
+    <div class="explain" id="explain_open" style="display: {{ block }}">
         <div class="txt">
             <p>暂时还没有收到邀约，你可以一边主动投简历，一边等待企业的邀约</p>
         </div>
