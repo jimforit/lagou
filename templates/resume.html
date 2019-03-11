@@ -15,7 +15,7 @@
     <section class="form_container active" data-view="codeLogin">
         <header class="form_header"><h2>请填写简历</h2></header>
         {{ message }}
-        <form class="form_body form_register" method="post" action="{% url "resume:resume_page" %}">
+        <form class="form_body form_register" method="post" action="{% url "resume_page" %}">
             <div class="input_label phone_wrapper">
                 <!--
 	@require "mobile/modules/country-code/main.js"
@@ -26,7 +26,7 @@
                 <input type="text" name="creer_time" placeholder="请输入工作年限" class="input_text_resume">
                 <input type="text" name="self_desc" placeholder="请输入自我描述" class="input_text_resume">
                 <input type="text" name="mobile" placeholder="请输入11位手机号码" class="input_text_resume">
-                <input type="text" name="email" value="{{ request.user.email }}" readonly="readonly" class="input_text_resume">
+                <input type="text" name="email" placeholder="请输入邮箱地址" class="input_text_resume">
                 <input type="text" name="school" placeholder="请输入毕业院校" class="input_text_resume">
                 <input type="text" name="major" placeholder="请输入所学专业" class="input_text_resume">
                 <input type="text" name="lastest_job_desc" placeholder="请输入最近一份工作详情" class="input_text_resume">
@@ -34,12 +34,12 @@
                 <input type="text" name="desire_position" placeholder="期望岗位" class="input_text_resume">
                 <input type="text" name="desire_monthly_salary" placeholder="期望月薪" class="input_text_resume">
                 <select class="input_text_resume" name="gender">
-                    <option value="男">男</option>
-                    <option value="女">女</option>
+                    <option value="female">男</option>
+                    <option value="male">女</option>
                 </select>
                  <select class="input_text_resume" name="desire_city">
-                    <option value="上海">上海</option><option value="北京">北京</option>
-                    <option value="深圳">深圳</option><option value="广州">广州</option>
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
                 </select>
                 <input type="text" name="speciality" placeholder="请输入您的特长，多项请以/分隔" class="input_text_resume">
                 <span >请上传近照或者头像:</span><input type="file" name="self_image"  class="input_image">

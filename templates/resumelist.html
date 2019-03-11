@@ -50,23 +50,51 @@
             <ul class="list"></ul>
         </div>
     <ul class="list">
-        {% for item in resume_list %}
-        <a href="{% url "resume:resume_detail_page" item.id %}"><li class="activeable list-item">
+        <li class="activeable list-item">
             <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">
-                <h2 class="item-user"><span class="l-user">{{ item.user.nick_name }}</span>
+                <h2 class="item-user"><span class="l-user">拉勾用户5836</span>
                 </h2>
                 <p class="item-info">
                     <span class="item-pos">
-                        {{ item.lastest_job_position }}
+                        资深前端工程师
                     </span>
-                    <span class="r-city">{{ item.desire_monthly_salary }} {{ item.desire_city }}</span>
+                    <span class="r-city">20K 南宁市</span>
 
                 </p>
-                <p class="item-time">{{ item.update_time }}</p>
+                <p class="item-time">今天 10:32</p>
             </div>
-        </li></a>
-        {% endfor %}
+        </li>
+          <li class="activeable list-item">
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <h2 class="item-user"><span class="l-user">拉勾用户5835</span>
+                </h2>
+                <p class="item-info">
+                    <span class="item-pos">
+                        资深python开发工程师
+                    </span>
+                    <span class="r-city">25K 北京市</span>
+
+                </p>
+                <p class="item-time">今天 10:32</p>
+            </div>
+        </li>
+        <li class="activeable list-item">
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <h2 class="item-user"><span class="l-user">拉勾用户6428</span>
+                </h2>
+                <p class="item-info">
+                    <span class="item-pos">
+                        大数据开发工程师
+                    </span>
+                    <span class="r-city">30K 北京市</span>
+
+                </p>
+                <p class="item-time">今天 10:50</p>
+            </div>
+        </li>
         <li class="activeable list-more">加载更多</li>
     </ul>
     <div id="copyright"><p>©2018 lagou.com, all right reserved </p>

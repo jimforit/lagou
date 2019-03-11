@@ -27,16 +27,16 @@
 <body ontouchstart="">
 
 <header id="header">职位详情
-    <div class="left"><a href="{% url "job:job_list_page" %}"><span class="corner"></span></a></div>
+    <div class="left"><span class="corner"></span></div>
     <div class="right">
-        <a href="{% url "job:job_list_page" %}"><span class="corner"></span></a>
+        <span class="corner"></span>
     </div>
 </header>
 <!-- 一键投递接口 -->
 <div id="content">
 
     <div class="postitle">
-        <h2 class="title">{{ job.name }}</h2>
+        <h2 class="title">资深前端工程师</h2>
         <div class="collicon activeable">
             <span class="icon"></span>
             <span class="text">
@@ -49,43 +49,43 @@
         <div class="items">
                                     <span class="item salary">
                         <em class="icon"></em>
-                        <span class="text">{{ job.salary }}</span>
+                        <span class="text">16k-30k</span>
                     </span>
             <span class="item workaddress">
                         <em class="icon"></em>
-                        <span class="text">{{ job.city }}</span>
+                        <span class="text">上海</span>
                     </span>
             <span class="item jobnature">
                         <em class="icon"></em>
-                        <span class="text">{{ job.position_type }}</span>
+                        <span class="text">全职</span>
                     </span>
             <span class="item workyear">
                         <em class="icon"></em>
-                        <span class="text">{{ job.experience_required }}</span>
+                        <span class="text">3-5年</span>
                     </span>
             <span class="item education">
                         <em class="icon"></em>
                         <span class="text">
-                            {{ job.degree_required }}                        </span>
+                            本科及以上                        </span>
                     </span>
         </div>
         <!-- 诱惑 -->
         <div class="temptation">
-            职位诱惑：{{ job.attractive_desc }}
+            职位诱惑：发展好,福利好,氛围好,环境好
         </div>
     </div>
 
     <div class="company activeable" data-lg-tj-id="19v6" data-lg-tj-no="0030" data-lg-tj-cid="1291">
-        <img src="{{ job.enterprice.logo }}" alt="" class="logo">
+        <img src="../static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" alt="" class="logo">
         <div class="desc">
             <div class="dleft">
                 <h2 class="title">
-                    {{ job.enterprice.name }}
+                    杏仁医生
                 </h2>
                 <p class="info">
-                    {{ job.enterprice.enterprice_type}}
-                    / {{ job.enterprice.finance_stage }}
-                    / {{ job.enterprice.enterprice_gm }}
+                    移动互联网,O2O
+                    / B轮
+                    / 500-2000人
                 </p>
             </div>
             <span class="dright"></span>
@@ -97,7 +97,25 @@
             职位描述
         </header>
         <div class="content">
-            {{ job.position_desc }}
+            <p>岗位职责：</p>
+            <p>负责 Web 或小程序的开发，高效优质完成产品界面和功能的实现。持续优化 Web 前端体验和性能，改进现有的技术框架，提升前端开发效率。</p>
+            <p><br></p>
+            <p>任职要求：</p>
+            <p>1. 三年以上前端工作经验。</p>
+            <p>2.&nbsp;精通 HTML/CSS，关注前端用户体验。</p>
+            <p>2. 熟悉 ES2015 以及模块化开发，熟悉 Node，熟悉 Vue/React 等前端框架。</p>
+            <p>3. 熟悉前端工程化以及 Webpack/Gulp 等构建工具。</p>
+            <p>4. 熟悉 HTTP 协议以及前端性能优化，关注前端技术发展。</p>
+            <p>5. 具备用户体验意识，优秀的代码风格，良好的文档编写能力。</p>
+            <p><br></p>
+            <p>优先条件：</p>
+            <p>1. 开发或维护过开源项目</p>
+            <p>2. 提供 GitHub 帐号、StackOverflow 帐号、知乎帐号、技术 Blog 链接等</p>
+            <p><br></p>
+            <p>数不清的福利欢迎：</p>
+            <p># 开放的办公环境</p>
+            <p># 自由的技术氛围</p>
+            <p># 注重工程师的学习和成长</p>
         </div>
     </div>
 
@@ -109,42 +127,21 @@
         <ul class="list">
             <li class="list-item-empty list-item">暂无面试评价</li>
         </ul>
+        <a class="eval-all" href="https://m.lagou.com/user/expsList_3824635.html" style="display: none;"></a>
     </div>
-    {% if request.user.role.name == "user" %}
     <div class="fix_btn_group">
-        <div id="applybtn" class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635"
-             style="display: block;" onclick="applyJob()">投递简历
+        <div class="deliver deliver_resume rows_bar" data-lg-tj-id="19v6" data-lg-tj-no="0020" data-lg-tj-cid="3824635"
+             style="display: block;">投递简历
         </div>
     </div>
-        {% else %}
-        {% include "footer.html" %}
-    {%  endif %}
 </div>
 <!-- dep -->
-<script  src="/static/js/jquery.min.js"></script>
 <script>
     function closeadv() {
         var obj = document.getElementById("push_bottom");
         obj.style.display = "none";
 
     }
-
-    function applyJob() {
-         params ={"job_id":{{ job.id }}};
-        $.post('{% url "delivery:delivery_page" %}',params,function(data){
-            if(data.res==0){
-                $('#applybtn').text(data.errmsg);
-            }else{
-                $('#applybtn').text(data.success);
-
-            }
-
-        })
-    }
 </script>
-
-
-
-
 </body>
 </html>

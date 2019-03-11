@@ -14,8 +14,7 @@
 
     <title>微简历 - 拉勾网</title>
 
-    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招"
-          name="keywords">
+    <meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
 
     <meta content="拉勾网是3W旗下的互联网领域垂直招聘网站" name="description">
 
@@ -28,15 +27,7 @@
 <body ontouchstart="">
 
 <header id="header">微简历
-    <div class="left">{% if request.user.role.name == "recruiter" %}
-        <a href="{% url "resume:resume_list_page" %}">
-    {% else %}
-        <a href="{% url "user:profile_page" %}">
-    {% endif %}
-        <span class="corner">
-        </span>
-        </a>
-    </div>
+    <div class="left"><span class="corner"></span></div>
     <div class="right">
         <span class="corner"></span>
     </div>
@@ -45,54 +36,42 @@
 <div id="content">
 
     <div class="postitle">
-
-
-
-        <h2 class="title">
-            {% if delivery is not None and request.user.role.name == "recruiter"%}
-                申请岗位:{{ delivery.position.name }}
-            {% else %}
-                职称：{{ resume_data.lastest_job_position }}
-            {% endif %}
-        </h2>
-        {% if request.user.role.name == "recruiter" %}
-            <div class="collicon activeable">
-                <span class="icon"></span>
-                <span class="text">
+        <h2 class="title">职称：资深前端工程师</h2>
+        <div class="collicon activeable">
+            <span class="icon"></span>
+            <span class="text">
                                             已收藏
                                     </span>
-            </div>
-        {% endif %}
+        </div>
     </div>
 
     <div class="detail">
         <div class="items">
                                     <span class="item salary">
                         <em class="icon"></em>
-                        <span class="text">{{ resume_data.desire_monthly_salary }}</span>
+                        <span class="text">25k</span>
                     </span>
             <span class="item workaddress">
                         <em class="icon"></em>
-                        <span class="text">{{ resume_data.desire_city }}</span>
+                        <span class="text">上海</span>
                     </span>
             <span class="item jobnature">
                         <em class="icon"></em>
-                        <span class="text">{{ resume_data.job_type }}</span>
+                        <span class="text">全职</span>
                     </span>
             <span class="item workyear">
                         <em class="icon"></em>
-                        <span class="text">{{ resume_data.creer_time }}年</span>
+                        <span class="text">5年</span>
                     </span>
             <span class="item education">
                         <em class="icon"></em>
                         <span class="text">
-                            {{ resume_data.degree }}                        </span>
+                            本科                        </span>
                     </span>
-
         </div>
         <!-- 诱惑 -->
         <div class="temptation">
-            <p>自我描述：{{ resume_data.self_desc }}</p>
+            <p>自我描述：MySQL DBA，曾任职平安科技与百度，负责数据库架构搭建与运维工作。</p>
         </div>
     </div>
 
@@ -101,12 +80,12 @@
         <div class="desc">
             <div class="dleft">
                 <h2 class="title">
-                    {{ resume_data.name }}
+                    李东君
                 </h2>
                 <p class="info">
-                    {{ resume_data.school }}
-                    / {{ resume_data.major }}
-                    / {{ resume_data.age }}岁
+                    华南理工大学
+                    / 软件工程
+                    / 29岁
                 </p>
             </div>
             <span class="dright"></span>
@@ -118,43 +97,30 @@
             工作经历
         </header>
         <div class="content">
-            <p>{{ resume_data.lastest_job_desc }}</p>
+            <p>2018.02-至今在百度担任高级数据库工程师，维护实例超过800+</p>
         </div>
     </div>
 
     <div class="positioneval">
         <div class="eval-title">
             个人熟练掌握技能
-            <span id="total">(<span>{{ resume_data.speciality|length }}</span>)</span>
+            <span id="total">(<span>5</span>)</span>
         </div>
         <ul class="list">
-            {% for item in resume_data.speciality %}
-                <li class="list-item-empty list-item">{{ forloop.counter }}.{{ item }}。</li>
-            {% endfor %}
+            <li class="list-item-empty list-item">1.数量掌握python语言开发，开发过lagou 移动Web应用。</li>
+            <li class="list-item-empty list-item">2.精通MySQL高可用架构设计与高可用运维。</li>
+            <li class="list-item-empty list-item">3.精通Shell脚本开发，有4年电信软件运维开发经验。</li>
+            <li class="list-item-empty list-item">4.精通Oracle数据库高可用架构搭建。</li>
         </ul>
         <a class="eval-all" href="https://m.lagou.com/user/expsList_3824635.html" style="display: none;"></a>
     </div>
-    {% if request.user.role.name == "recruiter" %}
-        {% if delivery is None %}
-            <a href="{% url "interview:interview_page" resume_data.id %}">
-                <div class="fix_btn_group">
-                    <div class="deliver deliver_resume rows_bar" style="display: block">发送面试邀请
-                    </div>
-                </div>
-
-            </a>
-        {% else %}
-            <div class="fix_commit_group">
-                <div class="deliver deliver_resume rows_bar"
-                     style="display: block;">确认
-                </div>
-            </div>
-            <div class="fix_cancel_group">
-                <div class="deliver deliver_resume rows_bar" style="display: block;">婉拒
-                </div>
-            </div>
-        {% endif %}
-
+    {% if user.role_id == 2 %}
+    <a href="{% url "interview_page" %}">
+    <div class="fix_btn_group">
+        <div class="deliver deliver_resume rows_bar">发送面试邀请
+        </div>
+    </div>
+    </a>
     {% else %}
         {% include "footer.html" %}
     {% endif %}

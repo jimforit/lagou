@@ -314,29 +314,3 @@ form {
     display: block;
     margin-top: -1em;
 }
-
-#header {
-    height: 45px;
-    line-height: 45px;
-    background-color: #00b38a;
-    color: #fff;
-    font-size: 0.45rem;
-    text-align: center;
-    position: relative;
-}
-#header .left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 40px;
-}
-
-#header .left .corner {
-    width: 9px;
-    height: 20px;
-    margin: 13px auto 0 auto;
-    background: url(/static/images/icon2.png) no-repeat -1.5px -20.5px;
-    background-size: 250px 250px;
-    display: inline-block;
-}

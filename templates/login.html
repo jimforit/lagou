@@ -14,7 +14,7 @@
 <input type="hidden" value="" id="isVisiableRequestFormVerifyCode">
 <div class="container">
     <section class="form_container" id="phone_login">
-        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "user:register_page" %}" class="brother_link">注册</a>
+        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "register_page" %}" class="brother_link">注册</a>
         </header>
         <form class="form_body form_code" method="get">
             <div class="input_label phone_wrapper">
@@ -84,9 +84,9 @@
         </footer>
     </section>
     <section class="form_container active" id="passwd_login">
-        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "user:register_page" %}" class="brother_link">注册</a>
+        <header class="form_header"><h2>登录拉勾</h2><a href="{% url "register_page" %}" class="brother_link">注册</a>
         </header>
-        <form class="form_body form_password" method="post" action="{% url "user:login_page" %}">
+        <form class="form_body form_password" method="post" action="{% url "login_page" %}">
             <div class="input_label">
                 <input type="text" name="email" placeholder="请输入已验证的邮箱" class="input_text user_input">
             </div>

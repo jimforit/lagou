@@ -11,9 +11,6 @@
     <script charset="UTF-8"></script>
 </head>
 <body style="font-size: 12px;">
-<header id="header">录用管理
-    <div class="left"><a href="{% url "interview:interview_result_page" interview.id%}"><span class="corner"></span></a></div>
-</header>
 <div class="container cleafix">
     <section class="form_container active" data-view="codeLogin">
         <header class="form_header"><h2>发放Offer</h2></header>
@@ -23,11 +20,15 @@
 	@require "mobile/modules/country-code/main.js"
 	@require "mobile/modules/country-code/main.less"
 -->
-                <input type="text" name="name" class="input_text_resume" value="{{ resume.name }}" readonly>
-                <input type="text" name="position" class="input_text_resume" value="{{ interview.position.name }}" readonly>
-                <input type="text" name="salary" placeholder="请输入岗位薪资" class="input_text_resume">
-                <input type="text" name="job_desc" placeholder="请输入职位描述" class="input_text_resume">
-                <input type="text" name="city" class="input_text_resume" value="{{ interview.position.city }}" readonly>
+                <input type="text" class="input_text" value="李东君" readonly>
+                <input type="text" placeholder="请输入岗位信息" class="input_text">
+                <input type="text" placeholder="请输入岗位薪资" class="input_text">
+                <input type="text" placeholder="请输入职位描述" class="input_text">
+                <select class="input_text phone_input">
+                     <option value="#">请选择入职城市</option>
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
+                </select>
             </div>
             <div class="input_label btn_group">
                 <input type="submit" class="submit_btn" value="提交">

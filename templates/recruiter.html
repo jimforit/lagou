@@ -11,9 +11,6 @@
     <script charset="UTF-8"></script>
 </head>
 <body style="font-size: 12px;">
-<header id="header">招聘需求
-    <div class="left"><a href="{% url "user:profile_page" %}"><span class="corner"></span></a></div>
-</header>
 <div class="container cleafix">
     <section class="form_container active" data-view="codeLogin">
         <header class="form_header"><h2>需求发布</h2></header>
@@ -24,41 +21,59 @@
 	@require "mobile/modules/country-code/main.less"
 -->
 
-                <input type="text" name="position" placeholder="请输入岗位信息" class="input_text_resume">
-                <input type="text" name="degree_required" placeholder="请输入学历要求" class="input_text_resume">
-                <input type="text" name="attractive_desc" placeholder="请输入职位诱惑" class="input_text_resume">
-                 <select name="city" class="input_text_resume">
-                     <option value=""><span class="hint_text">请选择城市</span></option>
-                    <option value="上海">上海</option><option value="北京">北京</option>
-                    <option value="深圳">深圳</option><option value="广州">广州</option>
+                <input type="text" placeholder="请输入岗位信息" class="input_text">
+                <input type="text" placeholder="请输入学历要求" class="input_text">
+                <input type="text" placeholder="请输入职位诱惑" class="input_text">
+                 <select class="input_text">
+                    <option value="SH">上海</option><option value="BJ">北京</option>
+                    <option value="SZ">深圳</option><option value="GZ">广州</option>
                 </select>
-                 <select name="salary" class="input_text_resume">
-                     <option value=""><span class="hint_text">请选择薪资范围</span></option>
+                 <select class="input_text">
+                     <option value="#"><span class="hint_text">请选择薪资</span></option>
                      <option value="3K-8K">3K-8K</option>
-                     <option value="8K-14K">8K-14K</option>
-                     <option value="15K-30K">15K-30K</option>
-                     <option value="25K-30K">25K-30K</option>
-                     <option value="30K-45K">30K-45K</option>
-                     <option value="50K-100K">50K-100K</option>
+                     <option value="8K-12K">8K-12K</option>
+                     <option value="13-15K">13-15K</option>
+                     <option value="15K-20K">15K-20K</option>
+                     <option value="20K-30K">20K-30K</option>
                 </select>
-                 <select name="experience_required" class="input_text_resume">
-                    <option value="应届生">应届生</option>
-                    <option value="1-3年">1-3年</option>
-                     <option value="3-5年">3-5年</option>
-                     <option value="5-7年">5-7年</option>
-                     <option value="7年以上">7年以上</option>
-                     <option value="10年以上">10年以上</option>
+
+                <select class="input_text">
+                    <option value="TSL">天使轮</option>
+                    <option value="AL">A轮</option>
+                    <option value="BL">B轮</option>
+                    <option value="CL">C轮</option>
+                    <option value="WRZ">未融资</option>
+                    <option value="BXY">不需要融资</option>
                 </select>
-                <select name="position_type" class="input_text_resume">
-                    <option value="全职">全职</option>
-                    <option value="兼职">兼职</option>
+                <select class="input_text">
+                    <option value="JXQY">10-49人</option>
+                    <option value="XQY">50-99人</option>
+                    <option value="ZXQY">100-499人</option>
+                    <option value="ZQY">500-1000人</option>
+                    <option value="DQY">1000-5000人</option>
+                    <option value="JT">5000人以上</option>
                 </select>
-                <select name="effect_days" class="input_text_resume">
-                     <option value=""><span class="hint_text">岗位有效期</span></option>
-                    <option value="三天">三天</option>
-                    <option value="一周">一周</option><option value="一个月">一个月</option>
+                <select class="input_text">
+                    <option value="MI">移动互联网</option>
+                    <option value="ET">电信</option>
+                    <option value="FT">金融</option>
+                    <option value="DS">电商</option>
+                    <option value="ZQ">证券</option>
+                    <option value="WLW">物联网</option>
                 </select>
-                <input type="text" name="position_desc" placeholder="请输入职位描述" class="input_text_resume">
+                 <select class="input_text">
+                    <option value="YJ">应届生</option>
+                    <option value="XS">1-3年</option>
+                     <option value="ZJ">3-5年</option>
+                     <option value="GJ">5-7年</option>
+                     <option value="ZJ">7年以上</option>
+                     <option value="DK">10年以上</option>
+                </select>
+                <select class="input_text">
+                    <option value="QZ">全职</option>
+                    <option value="JZ">兼职</option>
+                </select>
+                <input type="text" placeholder="请输入职位描述" class="input_text">
             </div>
             <div class="input_label btn_group">
                 <input type="submit" class="submit_btn" value="提交">

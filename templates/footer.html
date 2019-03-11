@@ -8,17 +8,17 @@
 <body>
 <footer id="footer"><!--通用footer组件模板@author pooky@lagou.com-->
     <div data-name="职位" data-index="0" data-type="custom" class="footer-tab-custom">
-        <a href="{% url 'job:job_list_page' %}"><span class="icon"></span>
+        <a href="{% url 'job_list_page' %}"><span class="icon"></span>
             <span class="text">职位</span></a>
     </div>
     <div data-name="搜索" data-index="1" data-type="search" class="footer-tab-search selected">
-        <a href="{% url 'job:search_page' %}">
+        <a href="{% url 'search_page' %}">
             <span class="icon selected"></span>
             <span class="text">搜索</span>
         </a>
     </div>
     <div data-name="我的" data-index="2" data-type="mine" class="footer-tab-mine">
-        <a href="{% url 'user:profile_page' %}">
+        <a href="{% url 'profile_page' %}">
             <span class="icon"></span>
             <span class="text">我的</span></a>
     </div>

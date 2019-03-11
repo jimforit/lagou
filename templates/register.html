@@ -16,9 +16,9 @@
 <body>
 <div class="container cleafix">
     <section class="form_container active" data-view="codeLogin">
-        <header class="form_header"><h2>注册拉勾</h2><a href="{% url "user:login_page" %}"
+        <header class="form_header"><h2>注册拉勾</h2><a href="{% url "login_page" %}"
                                                     class="brother_link">登录</a></header>
-        <form class="form_body form_register" method="post" action="{% url "user:register_page" %}">
+        <form class="form_body form_register" method="post" action="{% url "register_page" %}">
 
             <div class="input_label">
               <input type="text" placeholder="请输入电子邮箱" name="email" class="input_text phone_input">

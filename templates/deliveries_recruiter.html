@@ -39,18 +39,18 @@
         <a href="#" onclick="show_unsuitable()" class="tab-item">已婉拒</a>
     </div>
     <ul class="list " id="all" style="display: block">
-        {% for item in delivery_dd_list %}
-            <li class="activeable item" data-index="0">
-            <img src="{{ item.enterprice.logo }}" class="item-logo">
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="0">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">{{ item.user.nick_name }}</h2>
+                    <h2 class="item-title">拉勾用户5836</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                面试岗位：{{ item.position.name }}
+                                面试岗位：资深前端工程师
                             </span>
                             <span class="item-pos">
-                                期望薪资：{{ item.resume.desire_monthly_salary }} {{ item.resume.desire_city }}
+                                期望薪资：25k 上海
                             </span>
                     </p>
 
@@ -58,73 +58,93 @@
                 <div class="desc-right">
                     <div class="experience">
                          <span>
-                            经验{{ item.resume.creer_time }}年
+                            经验6年
                         </span>
-                        <p class="item-time">{{ item.update_time|date }}</p>
+                        <p class="item-time">2017-11-14</p>
                     </div>
                 </div>
             </div>
-        </li>
-        {% endfor %}
+        </li></a>
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="1">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
+            <div class="item-desc">
+                <div class="desc-left">
+                    <h2 class="item-title">拉勾用户5436</h2>
+                    <p class="item-info">
+                            <span class="item-pos">
+                                面试岗位：前端工程师
+                            </span>
+                            <span class="item-pos">
+                                期望薪资：20k 上海
+                            </span>
+                    </p>
+                </div>
+                <div class="desc-right">
+                    <div class="experience">
+                         <span>
+                            经验3年
+                        </span>
+                        <p class="item-time">2017-11-14</p>
+                    </div>
+                </div>
+            </div>
+        </li></a>
     </ul>
     <ul class="list" id="invited" style="display: none">
-        {% for item in delivery_yq_list %}
-            <li class="activeable item" data-index="0">
-            <img src="{{ item.enterprice.logo }}" class="item-logo">
+         <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="0">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">{{ item.user.nick_name }}</h2>
+                    <h2 class="item-title">拉勾用户8374</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                面试岗位：{{ item.position.name }}
+                                面试岗位：前端工程师
                             </span>
                             <span class="item-pos">
-                                期望薪资：{{ item.resume.desire_monthly_salary }} {{ item.resume.desire_city }}
+                                期望薪资：20k 上海
                             </span>
                     </p>
-
                 </div>
                 <div class="desc-right">
                     <div class="experience">
                          <span>
-                            经验{{ item.resume.creer_time }}年
+                            经验3年
                         </span>
-                        <p class="item-time">{{ item.update_time|date }}</p>
+                        <p class="item-time">2017-11-14</p>
                     </div>
                 </div>
             </div>
-        </li>
-        {% endfor %}
-        {% for item in delivery_wj_list %}
-            <li class="activeable item" data-index="0">
-            <img src="{{ item.enterprice.logo }}" class="item-logo">
+         </li></a>
+        <a href="{% url "resume_detail_page" %}"><li class="activeable item" data-index="1">
+
+            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">
                 <div class="desc-left">
-                    <h2 class="item-title">{{ item.user.nick_name }}</h2>
+                    <h2 class="item-title">拉勾用户8324</h2>
                     <p class="item-info">
                             <span class="item-pos">
-                                面试岗位：{{ item.position.name }}
+                                面试岗位：前端工程师
                             </span>
                             <span class="item-pos">
-                                期望薪资：{{ item.resume.desire_monthly_salary }} {{ item.resume.desire_city }}
+                                期望薪资：20k 上海
                             </span>
                     </p>
-
                 </div>
                 <div class="desc-right">
                     <div class="experience">
                          <span>
-                            经验{{ item.resume.creer_time }}年
+                            经验3年
                         </span>
-                        <p class="item-time">{{ item.update_time|date }}</p>
+                        <p class="item-time">2017-11-14</p>
                     </div>
                 </div>
             </div>
-        </li>
-        {% endfor %}
+        </li></a>
     </ul>
     <ul class="list" id="unsuitable" style="display: none">
-       <a href="#">
+       <a href="{% url "resume_detail_page" %}">
            <li class="activeable item" data-index="2">
            <img src="/static/images/CgotOVsDfHCAC9pmAAGCQkZqi4Y202.jpg" class="item-logo">
             <div class="item-desc">

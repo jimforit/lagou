@@ -24,7 +24,7 @@
 <body ontouchstart="">
 
 <header id="header">我的面试
-    <div class="left"><a href="{% url "user:profile_page" %}"><span class="corner"></span></a></div>
+    <div class="left"><span class="corner"></span></div>
 </header>
 
 <div id="content">
@@ -32,70 +32,81 @@
         <a href="#" id="btn_inted" class="tab-item selected" onclick="showInterviewed()">已面试</a><a href="#" id="btn_will_inter" class="tab-item" onclick="showWillInterview()">将面试</a>
     </div>
     <ul class="list " id="interviewed" style="display: block">
-        {% for item in interview_ym_list %}
-            <a href="{% url "offer:offer_detail_page" %}">
-                <li class="activeable item" data-index="0">
-                <img src="{{ item.enterprice.logo }}" class="item-logo">
+            <a href="{% url "offer_detail_page" %}"><li class="activeable item" data-index="0">
+
+                <img src="/static/images/Cgo8PFTUWAOACCV7AABgh9p1YEg115.jpg" class="item-logo">
                 <div class="item-desc">
                     <div class="desc-left">
-                        <h2 class="item-title">{{ item.enterprice.name }}</h2>
+                        <h2 class="item-title">杏仁医生</h2>
                         <p class="item-info">
                             <span class="item-pos">
-                                {{ item.position.name }} [ {{ item.position.city }} ]
+                                资深前端工程师 [ 上海 ]
                             </span>
                         </p>
-                        <p class="item-time">{{ item.update_time }}</p>
+                        <p class="item-time">2017-12-29</p>
                     </div>
                     <div class="desc-right">
                         <div class="salary">
-                            {{ item.position.salary }}
+                            16k-30k
                         </div>
                         <div class="experience">
                          <span style="color: red">
-                             状态:{% if item.interview_status == "YM" %}待定
-                         {% elif item.interview_status == "JM" %}未结束
-                         {% endif %}
+                            状态:通过
                         </span>
                     </div>
                     </div>
                 </div>
             </li></a>
-        {% endfor %}
-    </ul>
-     <ul class="list " id="will_interview" style="display: none">
-            {% for item in interview_jm_list %}
-            <a href="{% url "offer:offer_detail_page" %}">
-                <li class="activeable item" data-index="0">
-                <img src="{{ item.enterprice.logo }}" class="item-logo">
+            <a><li class="activeable item" data-index="1">
+
+                <img src="/static/images/CgotOVxulEKAbWs_AABOc-FzmGo115.jpg" class="item-logo">
                 <div class="item-desc">
                     <div class="desc-left">
-                        <h2 class="item-title">{{ item.enterprice.name }}</h2>
+                        <h2 class="item-title">芦苇科技</h2>
                         <p class="item-info">
                             <span class="item-pos">
-                                {{ item.position.name }} [ {{ item.position.city }} ]
+                                商务助理 [ 广州 ]
                             </span>
                         </p>
-                        <p class="item-time">{{ item.update_time }}</p>
+                        <p class="item-time">2017-12-29</p>
                     </div>
                     <div class="desc-right">
                         <div class="salary">
-                            {{ item.position.salary }}
+                            3k-6k
                         </div>
                         <div class="experience">
                          <span>
-                             状态:{% if item.interview_status == "YM" %}待定
-                         {% elif item.interview_status == "JM" %}待定
-                         {% endif %}
+                            状态:通过
                         </span>
                     </div>
                     </div>
                 </div>
             </li></a>
-        {% endfor %}
+    </ul>
+     <ul class="list " id="will_interview" style="display: none">
+            <li class="activeable item" data-index="2">
+                <img src="/static/images/CgqKkVaDfB-AWCpsAAAVDbyF3us617.png" class="item-logo">
+                <div class="item-desc">
+                    <div class="desc-left">
+                        <h2 class="item-title">华通</h2>
+                        <p class="item-info">
+                            <span class="item-pos">
+                                测试开发 [ 深圳 ]
+                            </span>
+                        </p>
+                        <p class="item-time">2017-12-27</p>
+                    </div>
+                    <div class="desc-right">
+                        <div class="salary">
+                            25K-40K
+                        </div>
+                    </div>
+                </div>
+            </li>
         </ul>
     <ul class="list" id="empty" style="display: none">
         <li class="list-empty">
-            暂时没有将面试的记录，去<a href="{% url "job:job_list_page" %}">投简历</a>吧
+            暂时没有将面试的记录，去<a href="{% url "job_list_page" %}">投简历</a>吧
         </li>
     </ul>
 
@@ -106,7 +117,7 @@
 <script id="tpl-list-empty" type="text/html">
 
     <li class="list-empty">
-        暂时没有将面试的记录，去<a href={% url "job:job_list_page" %}>投简历</a>吧
+        暂时没有将面试的记录，去<a href={% url "job_list_page" %}>投简历</a>吧
     </li>
 </script>
 

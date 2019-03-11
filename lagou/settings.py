@@ -39,15 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'captcha',
-    'user',
-    'tinymce',  # 富文本编辑器
-    'job',
-    'interview',
-    'enterprice',
-    'delivery',
-    'resume',
-    'collection',
-    'offer',
+    'recruiters',
+    'applyers',
 ]
 
 MIDDLEWARE = [
@@ -82,11 +75,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lagou.wsgi.application'
 
-AUTH_USER_MODEL='user.User'
+
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-LOGIN_URL='/users/login'
 
 DATABASES = {
     'default': {
@@ -128,6 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+USE_TZ = True
 
 EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 25
