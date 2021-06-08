@@ -40,7 +40,7 @@ oauthlib==3.0.1
 odfpy==1.4.0
 openpyxl==2.5.14
 pefile==2018.8.8
-Pillow==5.4.1
+Pillow==8.2.0
 PyJWT==1.7.1
 PyMySQL==0.9.3
 python-ptrace==0.9.3
